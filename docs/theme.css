@@ -1,0 +1,354 @@
+body, html {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+p {
+    margin: 0;
+}
+
+.content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#markdown-body > hr:first-of-type {
+    margin-top: 0;
+}
+
+.hd-container {
+    min-height: 60%;
+    background-size:cover;
+    background-position: center;
+    background: rgb(21, 22, 78);
+    background: linear-gradient(158deg, rgba(21, 22, 78, 1) 0%, rgba(83, 8, 68, 1) 29%, rgba(91, 13, 13, 1) 67%, rgba(115, 85, 19, 1) 100%);
+    box-shadow: inset 0 -8px 8px -8px black;
+}
+
+.title{
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.furniture-grid {
+    display: block;
+    border: 5px solid #fff;
+    overflow: hidden;
+    width: 30%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.excerpt{
+    color: #fff;
+    font-weight: 300;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.main-body{
+    font-weight: 300;
+}
+
+.link-container {
+    position: relative;
+    top: -20px;
+    font-size: 1em;
+}
+
+.link-container .horizontal-list {
+    float: right;
+}
+
+.link-container a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+.hd-container hr{
+    border: 0;
+    height: 1px;
+    background-image:  linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+.authorship-container{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.authorship-container a{
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.authorship-container li{
+    white-space: nowrap;
+}
+
+
+ul.horizontal-list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
+
+ul.horizontal-list li{
+    display: inline;
+    padding: 0px 10px;
+}
+
+
+/* Markdown Related */
+div#markdown-body h1 {
+    font-weight:500;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    font-size: 2em;
+}
+
+div#markdown-body h2 {
+    font-weight:500;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 1.5em;
+}
+
+div#markdown-body h3, div.slideshow_wrapper h3 {
+    font-weight:500;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+div#markdown-body h4 {
+    font-weight:500;
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    font-size: 1em;
+}
+div#markdown-body hr{
+    border: 0;
+    height: 1px;
+    background-color: rgba(0,0,0,0.12);
+}
+
+div#markdown-body .flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#markdown-body .vflex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#markdown-body p {
+    display: inline-block;
+    text-align: justify;
+    width: 100%;
+}
+
+div#markdown-body ol {
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#markdown-body ul {
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#markdown-body code {
+    text-align: left;
+    display: block;
+    line-height: 1.5em;
+    background: #f7f7f7;
+    border-radius: 0.35em;
+    border: solid 2px #efefef;
+    padding: 0.25em 0.65em;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+
+div#markdown-body img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 400px;
+}
+
+div#markdown-body p.video-title {
+    text-align: center;
+}
+
+div#markdown-body figcaption {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+div#markdown-body td {
+    padding: 5px 5px;
+}
+
+span.env-name {
+    padding-bottom: 0;
+    display: block;
+}
+
+div.method-name {
+    padding-top: 3px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.w3-row-padding > .w3-col {
+    padding-bottom: 10px;
+}
+
+.w3-row-padding {
+    padding-bottom: 10px;
+}
+
+.slideshow_wrapper {
+    padding: 30px 0;
+    display: block;
+    width: 100%;
+}
+
+.slideshow img {
+    width: 100%;
+}
+
+.slick-list {
+    width: 100%;
+}
+
+.slick-dots li button:before {
+    font-size: 10px;
+}
+
+.slick-active button {
+    color: #4285f4;
+}
+
+.slideshow-container {
+    max-width: 1280px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(95, 88, 88, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* narrow screen */
+@media only screen and (max-width:400px) {
+    .hide-narrow {
+        display: none;
+    }
+    .title{
+        font-size: 1.0em;
+    }
+    .excerpt{
+        font-weight: 300;
+    }
+
+    .method-name {
+        padding-top: 3px;
+        padding-bottom: 10px;
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+    div#markdown-body img {
+        max-width: 100%;
+    }
+    figure {
+        margin: 1em 5px;
+    }
+    div#markdown-body code {
+        font-size: 12px;
+    }
+}
+
+/* narrow screen */
+@media only screen and (min-width: 401px) and (max-width: 1100px) {
+    .hide-narrow {
+        display: none;
+    }
+    .title{
+        font-size: 1.8em;
+    }
+}
+
+/* large screen */
+@media only screen and (min-width: 1101px) {
+    .hide-wide {
+        display: none;
+    }
+    .title{
+        font-size: 2em;
+    }
+}
