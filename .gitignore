@@ -131,7 +131,7 @@ dmypy.json
 # data
 robomimic/datasets
 data/
-
+*.zip
 
 # misc
 mujoco-py
@@ -139,6 +139,7 @@ MUJOCO_LOG.TXT
 .vscode
 wandb/
 plot/
+video/
 
 # log
 robomimic/bc_trained_models*

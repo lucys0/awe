@@ -375,7 +375,7 @@ class SequenceDataset(torch.utils.data.Dataset):
                     if waypoints[-1] != traj_len - 1:
                         waypoints = np.append(waypoints, traj_len - 1)
                 else:
-                    waypoints = hdf5_file["data/{}/waypoints_dp_max".format(ep)][()]
+                    waypoints = hdf5_file["data/{}/waypoints_dp".format(ep)][()]
                 num_waypoints.append(len(waypoints))
 
             for k in dataset_keys:

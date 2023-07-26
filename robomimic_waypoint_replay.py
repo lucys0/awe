@@ -120,7 +120,7 @@ def main(args):
                     waypoint_file = h5py.File(
                         f"robomimic/datasets/{args.task}/ph/low_dim.hdf5", "r"
                     )
-                    waypoints = waypoint_file[f"data/{ep}/waypoints_dp_max"][()]
+                    waypoints = waypoint_file[f"data/{ep}/waypoints_dp"][()]
                     # increase waypoints by 1 except the last one
                     waypoints = np.concatenate(
                         [waypoints[:-1] + 1, waypoints[-1:]], axis=0
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--end_idx",
         type=int,
-        default=0,
+        default=2,
         help="(optional) end index of the trajectory to playback",
     )
 
@@ -379,7 +379,6 @@ if __name__ == "__main__":
         type=str,
         default="",
         help="(optional) wandb entity",
-        required=True,
     )
 
     parser.add_argument(

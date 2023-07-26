@@ -80,9 +80,7 @@ class RobomimicReplayLowdimDataset(BaseLowdimDataset):
                         if waypoints[-1] != traj_len - 1:
                             waypoints = np.append(waypoints, traj_len - 1)
                     else:  # auto waypoints
-                        # waypoints = waypoint_file[f"data/demo_{i}/waypoints_dp"][()]
-                        # waypoints = waypoint_file[f"data/demo_{i}/waypoints_dp_max"][()]
-                        waypoints = waypoint_file[f"data/demo_{i}/waypoints_greedy"][()]
+                        waypoints = waypoint_file[f"data/demo_{i}/waypoints_dp"][()]
                         waypoints = np.concatenate(
                             [waypoints[:-1] + 1, waypoints[-1:]], axis=0
                         )

@@ -359,7 +359,7 @@ def _convert_robomimic_to_replay(
                         if waypoints[-1] != traj_len - 1:
                             waypoints = np.append(waypoints, traj_len - 1)
                     else:  # auto waypoints
-                        waypoints = waypoint_file[f"data/demo_{i}/waypoints_dp_max"][
+                        waypoints = waypoint_file[f"data/demo_{i}/waypoints_dp"][
                             ()
                         ]  # assuming DP waypoints
                         # increase waypoints by 1 except the last one

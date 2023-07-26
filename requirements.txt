@@ -10,3 +10,4 @@ scipy>=1.2.3
 matplotlib
 moviepy 
 imageio
+opencv-python
