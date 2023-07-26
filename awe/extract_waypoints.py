@@ -1,7 +1,8 @@
 """ Automatic waypoint selection """
 import numpy as np
+import copy
 
-from traj_reconstruction import (
+from awe.traj_reconstruction import (
     pos_only_geometric_waypoint_trajectory,
     reconstruct_waypoint_trajectory,
     geometric_waypoint_trajectory,
@@ -163,6 +164,11 @@ def dp_waypoint_selection(
     remove_obj=None,
     pos_only=False,
 ):
+    if actions is None:
+        actions = copy.deepcopy(gt_states)
+    elif gt_states is None:
+        gt_states = copy.deepcopy(actions)
+        
     num_frames = len(actions)
 
     # make the last frame a waypoint

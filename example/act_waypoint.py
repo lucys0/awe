@@ -6,7 +6,7 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 from utils.utils import plot_3d_trajectory
-from waypoint_selection import dp_waypoint_selection, greedy_waypoint_selection
+from awe.extract_waypoints import dp_waypoint_selection, greedy_waypoint_selection
 
 
 def main(args):

@@ -8,7 +8,7 @@ import robomimic.utils.obs_utils as ObsUtils
 import robomimic.utils.env_utils as EnvUtils
 import robomimic.utils.file_utils as FileUtils
 
-from waypoint_selection import (
+from awe.extract_waypoints import (
     greedy_waypoint_selection,
     dp_waypoint_selection,
     backtrack_waypoint_selection,
