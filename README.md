@@ -1,5 +1,5 @@
 # Automatic Waypoint Extraction (AWE)
-[[Project website](https://lucys0.github.io/awe/)] [[Paper]()]
+[[Project website](https://lucys0.github.io/awe/)] [[Paper](https://arxiv.org/abs/2307.14326)]
 
 ![](media/teaser.png)
 
