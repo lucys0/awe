@@ -4,7 +4,7 @@ import pkg_resources
 from setuptools import setup, find_packages
 
 
-PKG_NAME = "awe"
+PKG_NAME = "waypoint_extraction"
 VERSION = "0.1"
 EXTRAS = {}
 

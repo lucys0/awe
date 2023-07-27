@@ -2,7 +2,7 @@
 import numpy as np
 import copy
 
-from awe.traj_reconstruction import (
+from waypoint_extraction.traj_reconstruction import (
     pos_only_geometric_waypoint_trajectory,
     reconstruct_waypoint_trajectory,
     geometric_waypoint_trajectory,

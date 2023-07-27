@@ -12,8 +12,8 @@ import robomimic.utils.env_utils as EnvUtils
 import robomimic.utils.file_utils as FileUtils
 
 from utils.utils import plot_3d_trajectory
-from awe.traj_reconstruction import reconstruct_waypoint_trajectory
-from awe.extract_waypoints import (
+from waypoint_extraction.traj_reconstruction import reconstruct_waypoint_trajectory
+from waypoint_extraction.extract_waypoints import (
     greedy_waypoint_selection,
     dp_waypoint_selection,
     backtrack_waypoint_selection,
