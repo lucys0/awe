@@ -185,17 +185,27 @@ showSlides(1, 'screwdriverGroup');
 
 </script>
 
+----
 
-<!-- ----
+## Try it out!
+
+Given a set of demonstrations and an error threshold, extracting waypoints is as simple as:
+```bash
+pip install waypoint-extraction
+import waypoint_extraction as awe
+waypoints = awe.extract_waypoints(states, err_threshold)
+```
+
+----
 
 
 ## Citation
 ```
-@article{shi2022skimo,
-  title={Skill-based Model-based Reinforcement Learning},
-  author={Lucy Xiaoyang Shi and Joseph J. Lim and Youngwoon Lee},
-  journal={arXiv preprint arXiv:2207.},
-  year={2022}
+@article{shi2023waypointbased,
+  title   = {Waypoint-Based Imitation Learning for Robotic Manipulation},
+  author  = {Lucy Xiaoyang Shi and Archit Sharma and Tony Z. Zhao and Chelsea Finn},
+  year    = {2023},
+  journal = {arXiv preprint arXiv: 2307.14326}
 }
-``` -->
+```
 <br>
