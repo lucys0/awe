@@ -137,5 +137,10 @@ For human datasets, set `--kl_weight=80`, as suggested by the ACT authors. To ev
 
 If you find our code useful for your research, please cite:
 ```
-
+@article{shi2023waypointbased,
+  title   = {Waypoint-Based Imitation Learning for Robotic Manipulation},
+  author  = {Lucy Xiaoyang Shi and Archit Sharma and Tony Z. Zhao and Chelsea Finn},
+  year    = {2023},
+  journal = {arXiv preprint arXiv: 2307.14326}
+}
 ```
