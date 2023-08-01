@@ -384,7 +384,7 @@ def train_bc(train_dataloader, val_dataloader, config):
 
     policy = make_policy(policy_class, policy_config)
     # if ckpt_dir is not empty, prompt the user to load the checkpoint
-    if os.path.isdir(ckpt_dir) and os.listdir(ckpt_dir):
+    if os.path.isdir(ckpt_dir) and len(os.listdir(ckpt_dir)) > 1:
         print(f"Checkpoint directory {ckpt_dir} is not empty. Load checkpoint? (y/n)")
         load_ckpt = input()
         if load_ckpt == "y":
