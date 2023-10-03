@@ -196,6 +196,12 @@ def dp_waypoint_selection(
         else geometric_waypoint_trajectory
     )
 
+    # Check if err_threshold is too small, then return all points as waypoints
+    min_error = func(actions, gt_states, list(range(1, num_frames)))
+    if err_threshold < min_error:
+        print("Error threshold is too small, returning all points as waypoints.")
+        return list(range(1, num_frames))
+
     # Populate the memoization table using an iterative bottom-up approach
     for i in range(1, num_frames):
         min_waypoints_required = float("inf")
@@ -234,7 +240,6 @@ def dp_waypoint_selection(
     return waypoints
 
 
-# iterative version, bottom-up
 def dp_reconstruct_waypoint_selection(
     env, actions, gt_states, err_threshold, initial_states, remove_obj
 ):
@@ -299,79 +304,6 @@ def dp_reconstruct_waypoint_selection(
     waypoints = list(set(waypoints))
     waypoints.sort()
     print(f"Minimum number of waypoints: {len(waypoints)}")
-    print(f"waypoint positions: {waypoints}")
-
-    return waypoints
-
-
-# backlog: recursive version, top-down
-def recursive_dp_waypoint_selection(
-    env, actions, gt_states, err_threshold, initial_states, remove_obj
-):
-    num_frames = len(actions)
-
-    # make the last frame a waypoint
-    initial_waypoints = [num_frames - 1]
-
-    # make the frames of gripper open/close as waypoints
-    for i in range(num_frames - 1):
-        if actions[i, -1] != actions[i + 1, -1]:
-            initial_waypoints.append(i)
-    initial_waypoints.sort()
-
-    # Memoization table to store the waypoint sets for subproblems
-    memo = {}
-
-    def min_waypoints(i, err_threshold):
-        if i < 1:
-            return (0, [])
-
-        if i in memo:
-            return memo[i]
-
-        min_waypoints_required = float("inf")
-        best_waypoints = []
-
-        for k in range(1, i):
-            # waypoints are relative to the subsequence
-            waypoints = [j - k for j in initial_waypoints if j >= k and j < i] + [i - k]
-
-            _, _, total_traj_err = reconstruct_waypoint_trajectory(
-                env=env,
-                actions=actions[k : i + 1],
-                gt_states=gt_states[k : i + 1],
-                waypoints=waypoints,
-                verbose=False,
-                initial_state=initial_states[k],
-                remove_obj=remove_obj,
-            )
-
-            # print some useful information for debugging
-            print(f"i: {i}, k: {k}, total_traj_err: {total_traj_err}")
-
-            if total_traj_err < err_threshold:
-                subproblem_waypoints_count, subproblem_waypoints = min_waypoints(
-                    k - 1, err_threshold
-                )
-                total_waypoints_count = 1 + subproblem_waypoints_count
-
-                if total_waypoints_count < min_waypoints_required:
-                    min_waypoints_required = total_waypoints_count
-                    best_waypoints = subproblem_waypoints + [i]
-
-            print(
-                f"min_waypoints_required: {min_waypoints_required}, best_waypoints: {best_waypoints}"
-            )
-
-        memo[i] = (min_waypoints_required, best_waypoints)
-        return memo[i]
-
-    min_waypoints_count, waypoints = min_waypoints(num_frames - 1, err_threshold)
-    waypoints += initial_waypoints
-    # remove duplicates
-    waypoints = list(set(waypoints))
-    waypoints.sort()
-    print(f"Minimum number of waypoints: {min_waypoints_count}")
     print(f"waypoint positions: {waypoints}")
 
     return waypoints
